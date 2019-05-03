@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Home page of this app</h1>
+
+<hr>
+  <h2>Custom Pipe</h2>
+  <input [(ngModel)]="stringToStrip" />
+  <p>Result of strip pipe: {{stringToStrip | stripVowel }}</p>
+
+  <h2> Creating a custom attribute directive</h2>
+  <p> Whithout directive</p>
+  <p appMyMatrixGreenText> With directive</p>
+
+
+  <h2>Case Pipes</h2>
+  <p>Enter a food you like</p>
+  <input [(ngModel)]="favFood" />
+  <p> {{favFood}}</p>
+  <p> Always uppercase: {{favFood | uppercase}}</p>
+  <p> Always lowercase: {{favFood | lowercase}}</p>
+  <p> Sliced: {{favFood | slice:2:4}}</p>
+
+
+  <h2>Currency Pipe</h2>
+  <p> How much does an apple cost?</p>
+  <input [(ngModel)]="foodCost" />
+  <p> {{foodCost}}</p>
+  <p> Default currency pipe: {{foodCost | currency}}</p>
+
+  <h2>Date Pipe</h2>
+  <p>Demo Date {{myDateObject | json}}</p>
+  <p>Default Date format: {{myDateObject | date}}</p>
+  <p>Medium Date format: {{myDateObject | date: 'medium'}}</p>
+  <p>Short Date format: {{myDateObject | date: 'short'}}</p>
+  <p>YYMMDD Date format: {{myDateObject | date: 'dd/MM/yyyy'}}</p>
+
+
+
+
+
+</div>

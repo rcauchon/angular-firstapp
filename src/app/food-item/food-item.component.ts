@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'food-item',
+  selector: 'app-food-item',
   templateUrl: './food-item.component.html',
   styleUrls: ['./food-item.component.scss'],
-  
+
 })
 
 export class FoodItemComponent implements OnInit {

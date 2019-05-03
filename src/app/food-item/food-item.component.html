@@ -1,17 +1,17 @@
 <div [class.liked]="isLiked"> <!-- class binding -->
 
     <!-- style binding -->
-    <h1 [style.font-weight]="isLiked ? 'bold' : 'normal' ">My name is {{foodItem.name}}</h1>
+    <h1 [style.font-weight]="isLiked ? 'bold' : 'normal' ">My name is "{{foodItem.name}}"</h1>
 
     <!-- Interpolation -->
     <p *ngIf="showDescription" [ngClass]="setFoodDescriptionCss()">Description: {{foodItem.description}}</p>
-    <button (click)="showDescription = !showDescription">Show/Hide </button> <br>
+    <button (click)="showDescription = !showDescription" class="btn btn-sm btn-info">Show/Hide </button> <br>
 
     <!-- Property binding -->
     <p [ngStyle]="setFoodDescriptionControl()" [innerHtml] = "foodItem.description"></p>
 
     <!-- Event Bindings interpolation -->
-    <button (click)="onLikeButtonPressed($event)">Like</button> <br>
+    <button (click)="onLikeButtonPressed($event)" class="btn btn-sm btn-warning mr-2" >Like</button> <br>
 
     <!-- <div> -->
         <!-- Two way binding -->
@@ -22,9 +22,9 @@
     <div class="nutritionalFactsContainer" style="background-color: #efefef">
         <div>
             <p>Display some nutritional facts about {{foodItem.name}}(s) with serving size {{foodItem.facts}}</p>
-            <button (click)="nutritionalFacts = 'carbs' ">Carbohydrates</button>
-            <button (click)="nutritionalFacts = 'protein' ">Protein</button>
-            <button (click)="nutritionalFacts = 'fat' ">Fat</button>
+            <button class="btn btn-secondary mr-2" (click)="nutritionalFacts = 'carbs' ">Carbohydrates</button>
+            <button class="btn btn-secondary mr-2" (click)="nutritionalFacts = 'protein' ">Protein</button>
+            <button class="btn btn-secondary" (click)="nutritionalFacts = 'fat' ">Fat</button>
         </div>
 
         <div [ngSwitch] = "nutritionalFacts">

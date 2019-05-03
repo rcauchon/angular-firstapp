@@ -1,0 +1,23 @@
+<div class="container">
+      <h1> List of Foods</h1>
+      <app-food-item *ngFor="let food of foodSourceArray" [foodItem]="food" (likeChanged)="appLikeChanged($event)"></app-food-item>
+
+      <button (click)="reloadFoods()" class="btn btn-primary">Reload foods</button>
+      <ul>
+        <li *ngFor="let food of foodSourceArray; let i = index; trackBy:food?.name;">
+          <p> Food number:{{i + 1}} {{food.name}}</p>
+        </li>
+      </ul>
+
+      <!--
+      <h2>Save Navigation Operator</h2>
+      <p> First food : {{ foodSourceArray[0].name}}</p>
+      <p> 5th food : {{ foodSourceArray[4]?.name}}</p>
+      -->
+
+      <!--
+      <h2>JSON Pipe</h2>
+      <p>Apple with no pipe {{foodSourceArray[0]}}</p>
+      <p>Apple with no pipe {{foodSourceArray[0] | json}}</p>
+      -->
+</div>

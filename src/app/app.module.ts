@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { FoodItemComponent } from './food-item/food-item.component';
 import { MatrixGreenTextDirective } from './attribute-directives/matrixGreenText.directive';
 import { StripVowelPipe } from './pipes/stripVowelPipe';
+import { FoodFormComponent } from './food-item/food-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FoodItemComponent,
     MatrixGreenTextDirective,
-    StripVowelPipe
+    StripVowelPipe,
+    FoodFormComponent
   ],
   imports: [
     BrowserModule,

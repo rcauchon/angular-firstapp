@@ -1,0 +1,48 @@
+<div class="container">
+  <h1> Food Item Form</h1>
+  <div class="row">
+    <div class="col-6">
+  <form>
+    <div class="form-group">
+      <label for="fd_name">Name</label>
+      <input [(ngModel)]="model.name" name="fd_name" type="text" class="form-control" id="fd_name" required>
+    </div>
+    <div class="form-group">
+      <label for="fd_desc">Description</label>
+      <input [(ngModel)]="model.description" name="fd_desc" type="text" class="form-control" id="fd_desc">
+    </div>
+    <div class="form-group">
+      <label for="fd_group">Group</label>
+      <select [(ngModel)]="model.group" name="fd_group" class="form-control" id="fd_group">
+        <option *ngFor="let group of groups" [value]="group"> {{ group }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="fd_serving">Serving Size</label>
+      <input [(ngModel)]="model.servingSize" name="fd_serving" type="text" class="form-control" id="fd_serving">
+    </div>
+    <div class="form-group">
+      <label for="fd_unit">Units</label>
+      <input [(ngModel)]="model.unit" name="fd_unit" type="text" class="form-control" id="fd_unit">
+    </div>
+    <div class="form-group">
+      <label for="fd_cal">Calories</label>
+      <input [(ngModel)]="model.calories" name="fd_cal" type="number" class="form-control" id="fd_cal">
+    </div>
+    <div class="form-group">
+      <label for="fd_protein">Protein</label>
+      <input [(ngModel)]="model.protein" name="fd_protein" type="number" class="form-control" id="fd_protein">
+    </div>
+    <div class="form-group">
+      <label for="fd_carbs">Carbohydrates</label>
+      <input [(ngModel)]="model.carbs" name="fd_carbs" type="number" class="form-control" id="fd_carbs">
+    </div>
+    <div class="form-group">
+      <label for="fd_fat">Fat</label>
+      <input [(ngModel)]="model.fat" name="fd_fat" type="number" class="form-control" id="fd_fat">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+  </div>
+</div>

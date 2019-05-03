@@ -1,10 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="">
+<div class="container">
   <h1>
     Welcome to {{ title }}!
   </h1>
 
+  <app-food-form></app-food-form>
 
+</div>
+<hr>
+<div class="container">
 <h2>Custom Pipe</h2>
 <input [(ngModel)] = "stringToStrip"/>
 <p>Result of strip pipe: {{stringToStrip | stripVowel }}</p>
@@ -48,10 +52,9 @@
 
 </div>
 
-
-
+<div class="container">
 <food-item *ngFor="let food of foodSourceArray" [foodItem]="food" (likeChanged)="appLikeChanged($event)"></food-item>
-
+</div>
 <!--
 <h2>Save Navigation Operator</h2>
 <p> First food : {{ foodSourceArray[0].name}}</p>

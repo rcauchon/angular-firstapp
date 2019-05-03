@@ -1,0 +1,52 @@
+<div class="container">
+  <h1> Food Item Model Driven Form</h1>
+  <div class="row">
+    <div class="col-6">
+
+      <!-- fdForm is in the class md-food-form.component.ts -->
+      <form [formGroup]="fdForm" novalidate (ngSubmit)="save(fdForm.value, fdForm.valid)">
+
+        <div class="form-group">
+          <label for="fd_name" >Name</label>
+          <input type="text" formControlName="name" class="form-control" required>
+          <div [hidden]="fdForm.controls.name.valid || (fdForm.controls.name.pristine && !submitted)" class="alert alert-danger">A name is required</div>
+        </div>
+        <div class="form-group">
+          <label for="fd_desc" >Description</label>
+          <input type="text" formControlName="description" class="form-control" required>
+          <div [hidden]="fdForm.controls.description.valid || (fdForm.controls.description.pristine && !submitted)" class="alert alert-danger">A description is required</div>
+        </div>
+
+        <div formGroupName="nutritionalInfo" class="form-group">
+            <label for="fd_servingSize">Serving Size</label>
+            <input type="text" formControlName="servingSize"  class="form-control">
+        </div>
+        <div formGroupName="nutritionalInfo"  class="form-group">
+            <label for="fd_unit">Unit</label>
+            <input type="text" formControlName="unit"  class="form-control">
+        </div>
+        <div formGroupName="nutritionalInfo" class="form-group">
+            <label for="fd_calories">Calories</label>
+            <input type="text" formControlName="calories"  class="form-control">
+        </div>
+        <div formGroupName="nutritionalInfo" class="form-group">
+            <label for="fd_fat">Fats</label>
+            <input type="text" formControlName="fat"  class="form-control">
+        </div>
+        <div formGroupName="nutritionalInfo" class="form-group">
+            <label for="fd_protein">Proteins</label>
+            <input type="text" formControlName="protein"  class="form-control">
+        </div>
+        <div formGroupName="nutritionalInfo" class="form-group">
+            <label for="fd_carbs">Carbohydrate</label>
+            <input type="text" formControlName="carbs"  class="form-control">
+        </div>
+        <button class="btn btn-secondary mr-2" (click)="demoDelayedFormSet()">Set form values</button>
+        <button class="btn btn-info mr-2" (click)="demoDelayedNameFieldSet()">Set form values</button>
+        <button class="btn btn-primary" type="submit"  [disabled]="!fdForm.valid">Submit</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>

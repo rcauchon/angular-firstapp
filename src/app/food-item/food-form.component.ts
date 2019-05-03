@@ -17,6 +17,8 @@ export class FoodFormComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    console.log('Submitted form');
+    console.log(JSON.stringify(this.model));
   }
 
   get diagnostic(){
@@ -27,6 +29,10 @@ export class FoodFormComponent implements OnInit {
 
   ngOnInit() {
     this.model = new FoodItem('apple', '', '', '', '', 0, 0, 0, 0);
+  }
+
+  newFood() {
+    this.model = new FoodItem('newFood', '', '', '', 'g', 0, 0, 0, 0);
   }
 
 }

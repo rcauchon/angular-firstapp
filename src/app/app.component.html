@@ -1,0 +1,60 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+
+<h2>Custom Pipe</h2>
+<input [(ngModel)] = "stringToStrip"/>
+<p>Result of strip pipe: {{stringToStrip | stripVowel }}</p>
+
+   <h2> Creating a custom attribute directive</h2>
+   <p> Whithout directive</p>
+   <p appMyMatrixGreenText> With directive</p>
+
+
+   <h2>Case Pipes</h2>
+   <p>Enter a food you like</p>
+   <input [(ngModel)] = "favFood"/>
+   <p> {{favFood}}</p>
+   <p> Always uppercase: {{favFood | uppercase}}</p>
+   <p> Always lowercase: {{favFood | lowercase}}</p>
+   <p> Sliced: {{favFood | slice:2:4}}</p>
+
+   <h2>JSON Pipe</h2>
+   <p>Apple with no pipe {{foodSourceArray[0]}}</p>
+   <p>Apple with no pipe {{foodSourceArray[0] | json}}</p>
+
+   <h2>Currency Pipe</h2>
+   <p> How much does an apple cost?</p>
+   <input [(ngModel)]="foodCost"/>
+   <p> {{foodCost}}</p>
+   <p> Default currency pipe: {{foodCost | currency}}</p>
+
+   <h2>Date Pipe</h2>
+   <p>Demo Date {{myDateObject | json}}</p>
+   <p>Default Date format: {{myDateObject | date}}</p>
+   <p>Medium Date format: {{myDateObject | date: 'medium'}}</p>
+   <p>Short Date format: {{myDateObject | date: 'short'}}</p>
+   <p>YYMMDD Date format: {{myDateObject | date: 'dd/MM/yyyy'}}</p>
+  
+   <button (click)="reloadFoods()">Reload foods</button>
+   <ul>
+     <li *ngFor="let food of foodSourceArray; let i = index; trackBy:food?.name;">
+       <p> Food number:{{i + 1}} {{food.name}}</p>
+     </li>
+   </ul>
+
+</div>
+
+
+
+<food-item *ngFor="let food of foodSourceArray" [foodItem]="food" (likeChanged)="appLikeChanged($event)"></food-item>
+
+<!--
+<h2>Save Navigation Operator</h2>
+<p> First food : {{ foodSourceArray[0].name}}</p>
+<p> 5th food : {{ foodSourceArray[4]?.name}}</p>
+-->
+<router-outlet></router-outlet>

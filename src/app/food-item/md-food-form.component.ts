@@ -12,23 +12,10 @@ export class MdFoodFormComponent implements OnInit {
   public fdForm: FormGroup;
   public isSubmitted: boolean;
 
-  constructor(private _fb:FormBuilder) { }
+  constructor(private _fb: FormBuilder) { }
 
   ngOnInit() {
-    /*
-    this.fdForm = new FormGroup({
-      name: new FormControl('', [<any>Validators.required]),
-      description: new FormControl('', [<any>Validators.required]),
-      nutritionalInfo: new FormGroup({
-        servingSize: new FormControl(''),
-        unit: new FormControl(''),
-        calories: new FormControl(''),
-        fat: new FormControl(''),
-        protein: new FormControl(''),
-        carbs: new FormControl('')
-      })
-    })
-    */
+
    this.fdForm = this._fb.group({
     name: ['', [<any> Validators.required]],
     description: ['', [<any> Validators.required]],
@@ -62,7 +49,7 @@ export class MdFoodFormComponent implements OnInit {
 
   demoDelayedNameFieldSet() {
     let control = this.fdForm.controls['name'];
-    control.setValue('Grape', {onlySelf:true});
+    control.setValue('Grape', {onlySelf: true});
 
   }
 
@@ -78,5 +65,4 @@ export class MdFoodFormComponent implements OnInit {
       console.log(changeObject)
     );
   }
-
 }

@@ -1,6 +1,9 @@
 export class FoodItem {
 
+    public facts: {};
+
     constructor(
+        public id: number,
         public name: string,
         public group?: string,
         public description?: string,
@@ -10,5 +13,13 @@ export class FoodItem {
         public fat?: number,
         public protein?: number,
         public carbs?: number
-    ) { }
+    ) {
+        this.facts = {
+            protein,
+            fat,
+            carbs,
+            calories,
+            servingSize
+        }
+     }
 }

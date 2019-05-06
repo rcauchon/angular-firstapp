@@ -28,11 +28,11 @@ export class FoodFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.model = new FoodItem('apple', '', '', '', '', 0, 0, 0, 0);
+    this.model = new FoodItem(1, 'apple', '', '', '', '', 0, 0, 0, 0);
   }
 
   newFood() {
-    this.model = new FoodItem('newFood', '', '', '', 'g', 0, 0, 0, 0);
+    this.model = new FoodItem(1, 'newFood', '', '', '', 'g', 0, 0, 0, 0);
   }
 
 }

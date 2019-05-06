@@ -1,13 +1,23 @@
 <div class="container">
       <h1> List of Foods</h1>
-      <app-food-item *ngFor="let food of foodSourceArray" [foodItem]="food" (likeChanged)="appLikeChanged($event)"></app-food-item>
+      <!--
+      <app-food-item *ngFor="let food of fdList" [foodItem]="food" (likeChanged)="appLikeChanged($event)"></app-food-item>
 
       <button (click)="reloadFoods()" class="btn btn-primary">Reload foods</button>
       <ul>
-        <li *ngFor="let food of foodSourceArray; let i = index; trackBy:food?.name;">
+        <li *ngFor="let food of fdList; let i = index; trackBy:food?.name;">
           <p> Food number:{{i + 1}} {{food.name}}</p>
         </li>
       </ul>
+    -->
+      <ul>
+        <li class="listItem" *ngFor="let food of fdList">
+          <p class=""><strong> Food name:</strong> {{food.name}}</p>
+          <p *ngIf="food.description"><strong>Description:</strong> {{food.description}}</p>
+          <button class="btn btn-success" (click)="onItemClicked(food)">More</button>
+        </li>
+      </ul>
+
 
       <!--
       <h2>Save Navigation Operator</h2>

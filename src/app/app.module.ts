@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MatrixGreenTextDirective } from './attribute-directives/matrixGreenText.directive';
@@ -21,7 +22,7 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
   imports: [
     BrowserModule,
     FormsModule, ReactiveFormsModule,
-    FoodModule, AppRoutingModule
+    FoodModule, AppRoutingModule, HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

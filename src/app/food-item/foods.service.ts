@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { FoodItem } from '../models/food-item';
 import { Headers, Http} from '@angular/http';
 
+//import { Observable } from 'rxjs';
+
+//import 'rxjs/map';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +21,15 @@ export class FoodsService {
 
   constructor(private http: Http) { }
 
+  // Async returns an observalbe
+ /* searchForFood(term: string): Observable<FoodItem[]>{
+
+      const searchUrl = 'http://localhost:3456/api/foods/?name=${item}';
+      return this.http
+          .get(searchUrl)
+          .map(response => response.json() as FoodItem[]);
+  }
+*/
   // Async Promise to return an array of FoodItems
   getFoods_promise(): Promise<FoodItem[]>{
 

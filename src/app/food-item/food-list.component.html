@@ -1,6 +1,7 @@
 <div class="container">
-      <h1> List of Foods</h1>
-      <!--
+  <div class="row">
+    <h1> List of Foods</h1>
+    <!--
       <app-food-item *ngFor="let food of fdList" [foodItem]="food" (likeChanged)="appLikeChanged($event)"></app-food-item>
 
       <button (click)="reloadFoods()" class="btn btn-primary">Reload foods</button>
@@ -10,22 +11,34 @@
         </li>
       </ul>
     -->
-      <ul>
-        <li class="listItem" *ngFor="let food of fdList">
-          <p class=""><strong> Food name:</strong> {{food.name}}</p>
-          <p *ngIf="food.description"><strong>Description:</strong> {{food.description}}</p>
-          <button class="btn btn-success" (click)="onItemClicked(food)">More</button>
-        </li>
-      </ul>
+  </div>
+  <div class="row"> 
+    <ul>
+      <li class="listItem" *ngFor="let food of fdList">
+        <p class=""><strong> Food name:</strong> {{food.name}}</p>
+        <p *ngIf="food.description"><strong>Description:</strong> {{food.description}}</p>
+        <button class="btn btn-success" (click)="onItemClicked(food)">More</button>
+      </li>
+    </ul>
 
+  </div>
+  <!--
+      <div class="row">
+          <p>Enter a food name to look for: </p>
+          <input #foodSearchBox id="food-search-box" (keyup)="searchForFood(foodSearchBox.value)">
+          <p>Results:</p>
 
-      <!--
+          <p *ngFor='let r of searchResults | async'>{{ r.name}}</p>
+      </div>
+    -->
+
+  <!--
       <h2>Save Navigation Operator</h2>
       <p> First food : {{ foodSourceArray[0].name}}</p>
       <p> 5th food : {{ foodSourceArray[4]?.name}}</p>
       -->
 
-      <!--
+  <!--
       <h2>JSON Pipe</h2>
       <p>Apple with no pipe {{foodSourceArray[0]}}</p>
       <p>Apple with no pipe {{foodSourceArray[0] | json}}</p>

@@ -35,7 +35,12 @@ export class FoodItemComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.params['id'];
+
+    //synchronous
     this.foodItem = this.foodService.getFood(id);
+
+    // optional parameters
+    console.log(this.route.snapshot.params['hello']);
   }
 
   setFoodDescriptionCss() {

@@ -14,7 +14,7 @@ export class FoodListComponent implements OnInit {
 
    fdList: FoodItem[];
 
-  constructor(private foodService: FoodsService, private router:Router){}
+  constructor(private foodService: FoodsService, private router: Router){}
 
   ngOnInit(): void {
 
@@ -73,8 +73,9 @@ export class FoodListComponent implements OnInit {
   }
 
   onItemClicked(food: FoodItem){
+
     console.log('Food id' + food.id)
-    this.router.navigate(['/food', food.id]);
+    this.router.navigate(['/food', food.id, {hello: 'world', foo: 'bar'}]);
   }
 
 

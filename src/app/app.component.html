@@ -21,9 +21,14 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/foods" routerLinkActive="active">FOODS</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ { outlets: { settingsOutlet: ['settings'] } } ]" routerLinkActive="active">Check settings</a>
+      </li>
      
     </ul>
   </nav>
 
 <router-outlet></router-outlet>
 <!-- Routed component go here -->
+
+<router-outlet name="settingsOutlet"></router-outlet>

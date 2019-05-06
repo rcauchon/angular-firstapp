@@ -8,6 +8,7 @@ import { MatrixGreenTextDirective } from './attribute-directives/matrixGreenText
 import { StripVowelPipe } from './pipes/stripVowelPipe';
 import { HomeComponent } from './home/home.component';
 import { FoodModule } from './food-item/food-module';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FoodModule } from './food-item/food-module';
     MatrixGreenTextDirective,
     StripVowelPipe,
     HomeComponent,
+    UserSettingsComponent,
   ],
   imports: [
     BrowserModule,

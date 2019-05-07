@@ -66,6 +66,7 @@ export class FoodListComponent implements OnInit {
 
   getFoods() {
    // this.fdList = this.foodService.getFoods();
+
    // Promise based
    this.foodService.getFoods_promise()
       .then(foods => {

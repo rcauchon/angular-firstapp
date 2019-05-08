@@ -31,20 +31,23 @@ export class FoodItemComponent implements OnInit {
 
   nutritionalFacts = '';
 
-  constructor(private foodService: FoodsService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private foodService: FoodsService, 
+              private router: Router, 
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     const id = +this.route.snapshot.params['id'];
 
-    //synchronous
+    // synchronous
     this.foodItem = this.foodService.getFood(id);
+
 
     // optional parameters
     console.log(this.route.snapshot.params['hello']);
   }
 
   setFoodDescriptionCss() {
-    let classes = {
+    const classes = {
       italic: this.descriptionItalic,
       caps: this.descriptionCaps
     }

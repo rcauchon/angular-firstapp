@@ -12,7 +12,7 @@
       </ul>
     -->
   </div>
-  <div class="row"> 
+  <div class="row">
     <ul>
       <li class="listItem" *ngFor="let food of fdList">
         <p class=""><strong> Food name:</strong> {{food.name}}</p>
@@ -20,17 +20,18 @@
         <button class="btn btn-success" (click)="onItemClicked(food)">More</button>
       </li>
     </ul>
-
   </div>
-  <!--
-      <div class="row">
-          <p>Enter a food name to look for: </p>
-          <input #foodSearchBox id="food-search-box" (keyup)="searchForFood(foodSearchBox.value)">
-          <p>Results:</p>
 
-          <p *ngFor='let r of searchResults | async'>{{ r.name}}</p>
-      </div>
-    -->
+  <div class="row col-6">
+    <label for="inputSearch">Enter a food name to look for: </label>
+    <input type="text" id="inputSearch" class="form-control" #foodSearchBox id="food-search-box" (keyup)="searchForFood(foodSearchBox.value)">
+    <label>Results:</label>
+
+    <ul *ngFor='let r of searchResults'>
+    <li>{{ r.name}}</li>
+    </ul>
+  </div>
+
 
   <!--
       <h2>Save Navigation Operator</h2>

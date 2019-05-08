@@ -14,11 +14,15 @@ export class FoodListComponent implements OnInit {
 
    fdList: FoodItem[];
 
+   searchResults: FoodItem[];
+
   constructor(private foodService: FoodsService, private router: Router){}
 
   ngOnInit(): void {
 
     this.getFoods();
+
+    // this.foodService.searchForFood('egg').subscribe(data => this.searchResults = data);
   }
 
   getFoods() {
@@ -30,6 +34,15 @@ export class FoodListComponent implements OnInit {
         this.fdList = foods;
         console.log('http get works');
       });
+  }
+
+  searchForFood(term: string) {
+    console.log("'"+term+"'");
+    if (!term || 0 === term.length) {
+      this.searchResults = [];
+    } else {
+      this.foodService.searchForFood(term).subscribe(data => this.searchResults = data);
+    }
   }
 
   appLikeChanged($event: string){

@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { FoodItem } from '../models/food-item';
-import { Headers, Http} from '@angular/http';
+import { Headers} from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
-//import { Observable } from 'rxjs';
-
-//import 'rxjs/map';
-
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -19,25 +17,21 @@ export class FoodsService {
     new FoodItem(3, 'egg', 'dairy', 'bronw and fragile', '1 large', 'g', 75, 6, 7, 1)
   ]
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   // Async returns an observalbe
- /* searchForFood(term: string): Observable<FoodItem[]>{
-
-      const searchUrl = 'http://localhost:3456/api/foods/?name=${item}';
-      return this.http
-          .get(searchUrl)
-          .map(response => response.json() as FoodItem[]);
+  searchForFood(term: string): Observable<FoodItem[]> {
+      let searchUrl = 'http://localhost:3456/api/searchFoods/?name=' + term;
+      return this.http.get<FoodItem[]>(searchUrl);
   }
-*/
+
   // Async Promise to return an array of FoodItems
-  getFoods_promise(): Promise<FoodItem[]>{
+  getFoods_promise(): Promise<FoodItem[]> {
 
     const foodsUrl = 'http://localhost:3456/api/foods';
 
-    return this.http.get(foodsUrl)
+    return this.http.get<FoodItem[]>(foodsUrl)
             .toPromise()
-            .then( response => response.json() as FoodItem[])
             .catch(this.handleError);
   }
 

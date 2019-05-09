@@ -1,0 +1,15 @@
+<div class="p-2">
+  <h2 class="text-primary">Test animation</h2>
+  <button (click)="toggleLight()" class="btn btn-success">Toggle Light</button>
+</div>
+<div [@lightsOnOff]="roomState" class="room"></div>
+
+<div class="row p-2">
+  <button [@buttonState]="buttonState" (click)="toggelButtonState()" class="btn btn-secondary"> Click me</button>
+</div>
+<div class="row p-2">
+  <button (click)="shotTestDiv = !shotTestDiv" class="btn btn-secondary"> Show/Hide </button>
+  <div *ngIf="shotTestDiv">
+    <p>Test div hello</p>
+  </div>
+</div>

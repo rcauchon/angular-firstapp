@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppComponent } from './app.component';
 import { MatrixGreenTextDirective } from './attribute-directives/matrixGreenText.directive';
@@ -10,6 +11,8 @@ import { StripVowelPipe } from './pipes/stripVowelPipe';
 import { HomeComponent } from './home/home.component';
 import { FoodModule } from './food-item/food-module';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { TestAnimationComponent } from './test-animation/test-animation.component';
+
 
 @NgModule({
   declarations: [
@@ -18,11 +21,13 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
     StripVowelPipe,
     HomeComponent,
     UserSettingsComponent,
+    TestAnimationComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule,
     FormsModule, ReactiveFormsModule,
-    FoodModule, AppRoutingModule
+    FoodModule, AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { TestAnimationComponent } from './test-animation/test-animation.component';
 
 const appRoutes: Routes = [
 
@@ -11,8 +13,13 @@ const appRoutes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'test',
+    component: TestAnimationComponent
+  },
+  {
     path: 'settings',
     component: UserSettingsComponent,
+    canActivate: [AuthGuardService],
     outlet: 'settingsOutlet'
   },
   {
@@ -29,6 +36,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
+  providers: [AuthGuardService],
   exports: [RouterModule]
 })
 

@@ -15,7 +15,7 @@ export class FoodsService {
     new FoodItem(1, 'apple', 'fruit', 'red and crunchy', '1 small apple', 'g', 77, 0, 1, 21),
     new FoodItem(2, 'banana', 'fruit', 'yellow and soft', '1 small banana', 'g', 90, 0, 1, 23),
     new FoodItem(3, 'egg', 'dairy', 'bronw and fragile', '1 large', 'g', 75, 6, 7, 1)
-  ]
+  ];
 
   constructor(private http: HttpClient) { }
 

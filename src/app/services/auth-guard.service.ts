@@ -7,8 +7,7 @@ import { CanDeactivate } from '@angular/router/src/utils/preactivation';
 })
 export class AuthGuardService implements CanActivate {
 
-  canActivate()
-  {
+  canActivate() {
     console.log('inside the canActivate Guard method');
     return true;
   }

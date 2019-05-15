@@ -13,6 +13,7 @@ import { FoodModule } from './food-item/food-module';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { TestAnimationComponent } from './test-animation/test-animation.component';
 import { SimpleComponent } from './simple/simple.component';
+import { Simple4Component } from './simple4/simple4.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SimpleComponent } from './simple/simple.component';
     UserSettingsComponent,
     TestAnimationComponent,
     SimpleComponent,
+    Simple4Component,
   ],
   imports: [
     BrowserModule, HttpClientModule,

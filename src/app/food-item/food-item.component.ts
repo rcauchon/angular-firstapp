@@ -13,7 +13,7 @@ import { FoodItem } from '../models/food-item';
 
 export class FoodItemComponent implements OnInit {
 
-  //@Input() foodItem;
+  // @Input() foodItem;
   foodItem: FoodItem;
 
   @Output()likeChanged = new EventEmitter();

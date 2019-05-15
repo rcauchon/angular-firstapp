@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { TestAnimationComponent } from './test-animation/test-animation.component';
+import { Simple4Component } from './simple4/simple4.component';
 
 const appRoutes: Routes = [
 
@@ -15,6 +16,10 @@ const appRoutes: Routes = [
   {
     path: 'test',
     component: TestAnimationComponent
+  },
+  {
+    path: 'simple4',
+    component: Simple4Component
   },
   {
     path: 'settings',

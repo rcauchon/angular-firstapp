@@ -13,6 +13,9 @@ import { FoodModule } from './food-item/food-module';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { TestAnimationComponent } from './test-animation/test-animation.component';
 import { SimpleComponent } from './simple/simple.component';
+import { AuthModule} from './auth/auth.module';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -24,12 +27,14 @@ import { SimpleComponent } from './simple/simple.component';
     UserSettingsComponent,
     TestAnimationComponent,
     SimpleComponent,
+    LoginComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule,
     FormsModule, ReactiveFormsModule,
     FoodModule, AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule, AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,6 +14,9 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { TestAnimationComponent } from './test-animation/test-animation.component';
 import { SimpleComponent } from './simple/simple.component';
 import { Simple4Component } from './simple4/simple4.component';
+import { AuthModule} from './auth/auth.module';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -26,12 +29,14 @@ import { Simple4Component } from './simple4/simple4.component';
     TestAnimationComponent,
     SimpleComponent,
     Simple4Component,
+    LoginComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule,
     FormsModule, ReactiveFormsModule,
     FoodModule, AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule, AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

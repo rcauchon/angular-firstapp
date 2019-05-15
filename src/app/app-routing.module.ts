@@ -6,9 +6,16 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { TestAnimationComponent } from './test-animation/test-animation.component';
 import { Simple4Component } from './simple4/simple4.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+
 
 const appRoutes: Routes = [
 
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'home',
     component: HomeComponent
@@ -26,6 +33,10 @@ const appRoutes: Routes = [
     component: UserSettingsComponent,
     canActivate: [AuthGuardService],
     outlet: 'settingsOutlet'
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   },
   {
     path: '',

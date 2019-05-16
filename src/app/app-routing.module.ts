@@ -8,6 +8,8 @@ import { TestAnimationComponent } from './test-animation/test-animation.componen
 import { Simple4Component } from './simple4/simple4.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
+import { VerifyComponent } from './verify/verify.component';
+import { AdminGuardService } from './services/admin-guard.service';
 
 
 const appRoutes: Routes = [
@@ -36,7 +38,12 @@ const appRoutes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate: [AdminGuardService],
+  },
+  {
+    path: 'verify',
+    component: VerifyComponent,
   },
   {
     path: '',

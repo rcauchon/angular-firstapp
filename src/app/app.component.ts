@@ -14,8 +14,8 @@ export class AppComponent {
   }
 
   logout(){
-    console.log('Logging out');
+    console.log('======== Logging out ============');
     this.loginService.logout();
-    this.router.navigate([""]);
+    this.router.navigate(['']);
   }
 }

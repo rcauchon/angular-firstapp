@@ -1,0 +1,35 @@
+<div class="col">
+  <h2>Verify the Authorization with the token JWT</h2>
+  <div class="row">
+    <div class="col">
+      <label>Token:</label>
+      <p class="text-justify">{{token}}</p>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <button class="btn btn-success" (click)="onVerifyStorage()">Verify Storage</button>
+    </div>
+    <div class="col-1" *ngIf="!storageVerify">
+      <span class="badge badge-pill badge-danger">Invalid token</span>
+    </div>
+    <div class="col-1" *ngIf="storageVerify">
+      <span class="badge badge-pill badge-success">Valid token</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <button class="btn btn-info mt-2" (click)="onVerifyServer()">Verify Server</button>
+    </div>
+    <div class="col-1" *ngIf="!serverVerify">
+      <span class="badge badge-pill badge-danger">Invalid token</span>
+    </div>
+    <div class="col-1" *ngIf="serverVerify">
+      <span class="badge badge-pill badge-success">Valid token</span>
+    </div>
+  </div>
+  <div class="row p-2">
+      <p>{{tokenvalue}}</p>
+  </div>
+</div>

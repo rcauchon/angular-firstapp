@@ -17,6 +17,7 @@ import { Simple4Component } from './simple4/simple4.component';
 import { AuthModule} from './auth/auth.module';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
+import { VerifyComponent } from './verify/verify.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { AdminComponent } from './admin/admin.component';
     Simple4Component,
     LoginComponent,
     AdminComponent,
+    VerifyComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule,

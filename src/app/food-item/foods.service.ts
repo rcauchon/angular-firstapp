@@ -40,18 +40,18 @@ export class FoodsService {
   }
 
   // Synchronous
-  getFoods(): FoodItem[]{
+  getFoods(): FoodItem[] {
     return this.dummyFoodList;
   }
 
   // synchronous
-  getFood(id): FoodItem{
+  getFood(id): FoodItem {
     let matchedFood = new FoodItem(0, '');
     let foodFound = false;
 
     this.dummyFoodList.forEach(food => {
-      if (!foodFound){
-        if (food.id === id){
+      if (!foodFound) {
+        if (food.id === id) {
           console.log('found food id:' + id);
           matchedFood = food;
           foodFound = true;
